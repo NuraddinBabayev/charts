@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burn Rate vs. Revenue Growth</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        canvas { max-width: 600px; margin: 20px auto; }
+    </style>
+</head>
+<body>
+    <h2>Burn Rate vs. Revenue Growth</h2>
+    <canvas id="burnRateChart"></canvas>
+    
+    <script>
+        new Chart(document.getElementById("burnRateChart"), {
+            type: 'line',
+            data: {
+                labels: ["Month 1", "Month 2", "Month 3", "Month 4", "Month 5", "Month 6"],
+                datasets: [
+                    {
+                        label: "Burn Rate ($K)",
+                        borderColor: "#FF3333",
+                        data: [50, 55, 60, 65, 70, 80],
+                        fill: false
+                    },
+                    {
+                        label: "Revenue Growth ($K)",
+                        borderColor: "#33A8FF",
+                        data: [20, 25, 30, 40, 50, 70],
+                        fill: false
+                    }
+                ]
+            },
+            options: { responsive: true }
+        });
+    </script>
+</body>
+</html>

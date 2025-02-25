@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAC vs. LTV Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        canvas { max-width: 600px; margin: 20px auto; }
+    </style>
+</head>
+<body>
+    <h2>CAC vs. LTV Comparison</h2>
+    <canvas id="cacLtvChart"></canvas>
+    
+    <script>
+        new Chart(document.getElementById("cacLtvChart"), {
+            type: 'bar',
+            data: {
+                labels: ["Acquisition Cost", "Lifetime Value"],
+                datasets: [{
+                    label: "USD ($)",
+                    backgroundColor: ["#FF5733", "#33FF57"],
+                    data: [250, 1200]
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { display: false } }
+            }
+        });
+    </script>
+</body>
+</html>
