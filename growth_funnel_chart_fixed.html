@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup Growth Funnel</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        canvas { max-width: 600px; margin: 20px auto; display: block; }
+    </style>
+</head>
+<body>
+    <h2>Startup Growth Funnel</h2>
+    <canvas id="growthFunnelChart"></canvas>
+    
+    <script>
+        new Chart(document.getElementById("growthFunnelChart"), {
+            type: 'bar',
+            data: {
+                labels: ["Website Visitors", "Leads", "Conversions", "Customers"],
+                datasets: [{
+                    label: "Users",
+                    backgroundColor: ["#FFAD33", "#FF5733", "#33FF57", "#33A8FF"],
+                    data: [5000, 1000, 300, 80]
+                }]
+            },
+            options: {
+                responsive: true,
+                indexAxis: 'y',
+                scales: {
+                    x: { stacked: true },
+                    y: { stacked: true }
+                },
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
